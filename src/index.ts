@@ -4,8 +4,9 @@ import router from "./routers/router";
 import errorHandler from "./middleware/errorHandler";
 import database from "./config/database";
 import { config } from "dotenv";
+import path from "path";
 
-config();
+config({ path: path.resolve(__dirname, "../.env") });
 const app: Application = express();
 const PORT = process.env.PORT || 5000;
 

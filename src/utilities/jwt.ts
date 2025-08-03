@@ -1,7 +1,8 @@
 import jwt from "jsonwebtoken";
 import { config } from "dotenv";
+import path from "path";
 
-config();
+config({ path: path.resolve(__dirname, "../.env") });
 
 const { JWT_SECRET, TOKEN_EXPIRY } = process.env;
 
